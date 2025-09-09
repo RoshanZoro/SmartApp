@@ -7,7 +7,7 @@ def tempFahr (tempCel):
 def airco(tempCel):
     if int(tempCel) > 25:
         return "Het is warm. De airco kan aan."
-    else
+    else:
         return "Het is niet warm."
 
 dagen = 0
