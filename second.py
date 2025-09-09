@@ -1,7 +1,7 @@
 
 #8.2 Het creëren van functies
 def gevoelsTemp (tempCel, vocht, windSnel):
-    return tempCel - (vocht / 100) * windSnel
+    return round ( (tempCel - (vocht / 100) * windSnel), 2 )
 def tempFahr (tempCel):
     return 1.8 * int(tempCel) + 32
 def airco(tempCel):
@@ -18,15 +18,15 @@ while True: #7.5 De loop-en-een-half 89
     if tempCel == "":
         print("Je moet nog een getal invoeren!")
     else:
-        tempCel = int(tempCel)
+        tempCel = float(tempCel)
 
-        windSnel = int( input("Wat is de windsnelheid? [m/s]"))
+        windSnel = input("Wat is de windsnelheid? [m/s]")
         if windSnel == "":
             print("Je moet nog een getal invoeren!")
         else:
-            windSnel = int(windSnel)
+            windSnel = float(windSnel)
 
-        vocht = int( input("Wat is de vochtigheid percentage? [%] "))
+        vocht = input("Wat is de vochtigheid percentage? [%] ")
         if vocht == "":
             print("Je moet nog een getal invoeren!")
         else:
@@ -34,12 +34,14 @@ while True: #7.5 De loop-en-een-half 89
 
         temp = float(tempCel)
         fahrenheit = tempFahr(tempCel)
-
+    tempCel = float(tempCel)
+    windSnel = float(windSnel)
+    vocht = float(vocht)
     print(f"Het is momenteel {tempCel} graden celcius.")
     print(f"Het is momenteel {fahrenheit} graden fahrenheit.")
-    print(f"De gevoelstemperatuur is momenteel {gevoelsTemp} graden.")
-    print(airco)
-    #if
-     #   break
+    print(f"De gevoelstemperatuur is momenteel {gevoelsTemp(tempCel, vocht, windSnel)} graden.")
+    print(airco(tempCel))
+    if input():
+       break
     dagen += 1
 
