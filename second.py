@@ -18,15 +18,19 @@ while True: #7.5 De loop-en-een-half 89
     if tempCel == "":
         print("Je moet nog een getal invoeren!")
     else:
-        tempCel = int(input(f"Wat is de temperatuur op dag {dagen + 1}? [C] ") )
-        if tempCel == "":
-            print("Je moet nog een getal invoeren!")
-        else:
-            windSnel = int( input("Wat is de windsnelheid? [m/s]"))
+        tempCel = int(tempCel)
+
+        windSnel = int( input("Wat is de windsnelheid? [m/s]"))
         if windSnel == "":
             print("Je moet nog een getal invoeren!")
         else:
-            vocht = int( input("Wat is de vochtigheid percentage? [%] "))
+            windSnel = int(windSnel)
+
+        vocht = int( input("Wat is de vochtigheid percentage? [%] "))
+        if vocht == "":
+            print("Je moet nog een getal invoeren!")
+        else:
+            vocht = int(vocht)
 
         temp = float(tempCel)
         fahrenheit = tempFahr(tempCel)
