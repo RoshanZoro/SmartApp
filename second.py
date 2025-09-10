@@ -3,9 +3,9 @@
 def gevoelsTemp (tempCel, vocht, windSnel):
     return round ( (tempCel - (vocht / 100) * windSnel), 2 )
 def tempFahr (tempCel):
-    return 1.8 * int(tempCel) + 32
-def airco(tempCel):
-    if int(tempCel) > 25:
+    return round ( (1.8 * int(tempCel) + 32), 2 )
+def airco(gevoelsTemp):
+    if int(gevoelsTemp) > 25:
         return "Het is warm. De airco kan aan."
     else:
         return "Het is niet warm."
