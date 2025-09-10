@@ -15,8 +15,18 @@ def tempFahr(tempCel):
 def airco(gevoelsTemp):
     if int(gevoelsTemp) > 25:
         return "Het is warm. De airco kan aan."
-    else:
-        return "Het is niet warm."
+    elif int(gevoelsTemp) < 0 and windSnel > 10:
+        return "Het is heel koud en het stormt! Verwarming helemaal aan!"
+    elif int(gevoelsTemp) < 0 and windSnel <= 10:
+        return "Het is behoorlijk koud! Verwarming aan op de benedenverdieping!"
+    elif 0 < int(gevoelsTemp) < 10 and windSnel > 12:
+        return "Het is best koud en het waait; verwarming aan en roosters dicht!"
+    elif 0 < int(gevoelsTemp) < 10 and windSnel < 12:
+        return "Het is een beetje koud, elektrische kachel op de benedenverdieping aan!"
+    elif 10 < int(gevoelsTemp) < 22:
+        return "Heerlijk weer, niet te koud of te warm."
+    return "Het is behoorlijk koud! Verwarming aan op de benedenverdieping!"
+
 
 #Def zodat ik niet bij elke vraag het zelfde hoef te zetten
 def vraag(prompt, vochtPercentage=False):
