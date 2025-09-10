@@ -1,5 +1,6 @@
 
 #8.2 Het creëren van functies
+
 def gevoelsTemp (tempCel, vocht, windSnel):
     return round ( (tempCel - (vocht / 100) * windSnel), 2 )
 def tempFahr (tempCel):
@@ -9,7 +10,16 @@ def airco(gevoelsTemp):
         return "Het is warm. De airco kan aan."
     else:
         return "Het is niet warm."
-
+# def leeg(prompt):
+#     while True:
+#         if waarde == "":
+#             print("Je moet nog een getal invoeren!")
+#             continue
+#         elif prompt.lower() == "stop":
+#             stopProgramma = True
+#             break
+#     return
+stopLijst = ["stop", "exit", "quit", "sotp"]
 dagen = 0
 stopProgramma = False
 #f-string, 44 Eenvoudige Functies
@@ -20,7 +30,7 @@ while not stopProgramma: #7.5 De loop-en-een-half 89
         if tempCel == "":
             print("Je moet nog een getal invoeren!")
             continue
-        elif tempCel.lower() == "stop":
+        elif tempCel.lower() in stopLijst:
             stopProgramma = True
             break
         else:
@@ -33,7 +43,7 @@ while not stopProgramma: #7.5 De loop-en-een-half 89
         if windSnel == "":
             print("Je moet nog een getal invoeren!")
             continue
-        elif windSnel.lower() == "stop":
+        elif windSnel.lower() in stopLijst:
             stopProgramma = True
             break
         else:
@@ -46,9 +56,12 @@ while not stopProgramma: #7.5 De loop-en-een-half 89
         if vocht == "":
             print("Je moet nog een getal invoeren!")
             continue
-        elif vocht.lower() == "stop":
+        elif vocht.lower() in stopLijst:
             stopProgramma = True
             break
+        elif float(vocht) > 100:
+            print("Het percentage mag niet hoger dan 100 zijn.")
+            continue
         else:
             vocht = float(vocht)
             break
