@@ -1,6 +1,6 @@
 # 8.2 Het creëren van functies
 stopLijst = ["stop", "exit", "quit", "sotp"]
-tempLijst = []
+tempLijst = [] #Deze moest buiten de loop anders werkte hij niet
 dagen = 0
 stopProgramma = False
 
