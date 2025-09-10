@@ -18,23 +18,29 @@ def airco(gevoelsTemp):
     else:
         return "Het is niet warm."
 
-
+#Def zodat ik niet bij elke vraag het zelfde hoef te zetten
 def vraag(prompt, vochtPercentage=False):
     while True:
         waarde = input(prompt)
+            #var voor de input en de input tekst (prompt)
         if waarde == "":
             print("Je moet nog een getal invoeren!")
             continue
+            #Als er niks getypt word, tekst printen en herhalen
         if waarde.lower() in stopLijst:
             return None
+            #Als de input tekst in mijn lijst staat het programma stoppen met break
         try:
             waarde = float(waarde)
+            #input veranderen naar float
         except ValueError:
             print("Dit is geen geldig getal.")
             continue
+            #Als de input geen getal is (float in ons geval) dan gooit hij Value Error met een print
         if vochtPercentage and waarde > 100:
             print("Het percentage mag niet hoger dan 100 zijn.")
             continue
+            #Snelle vocht percentage check
         return waarde
 
 
@@ -58,6 +64,4 @@ while not stopProgramma:  # 7.5 De loop-en-een-half 89
     print(f"De gevoelstemperatuur is momenteel {gevoel} graden.")
     print(airco(gevoel))
     print("-" * 40)
-# if input():
-#  break
     dagen += 1
