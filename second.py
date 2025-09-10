@@ -31,7 +31,7 @@ while not stopProgramma: #7.5 De loop-en-een-half 89
         if windSnel == "":
             print("Je moet nog een getal invoeren!")
             continue
-        elif tempCel.lower() == "stop":
+        elif windSnel.lower() == "stop":
             stopProgramma = True
             break
         else:
@@ -42,7 +42,7 @@ while not stopProgramma: #7.5 De loop-en-een-half 89
         if vocht == "":
             print("Je moet nog een getal invoeren!")
             continue
-        elif tempCel.lower() == "stop":
+        elif vocht.lower() == "stop":
             stopProgramma = True
             break
         else:
