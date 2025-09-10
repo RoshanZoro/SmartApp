@@ -26,6 +26,8 @@ while not stopProgramma: #7.5 De loop-en-een-half 89
         else:
             tempCel = float(tempCel)
             break
+    if stopProgramma:
+        break
     while True:
         windSnel = input("Wat is de windsnelheid? [m/s]")
         if windSnel == "":
@@ -37,6 +39,8 @@ while not stopProgramma: #7.5 De loop-en-een-half 89
         else:
             windSnel = float(windSnel)
             break
+    if stopProgramma:
+        break
     while True:
         vocht = input("Wat is de vochtigheid percentage? [%] ")
         if vocht == "":
@@ -48,11 +52,9 @@ while not stopProgramma: #7.5 De loop-en-een-half 89
         else:
             vocht = float(vocht)
             break
-#temp = float(tempCel)
+    if stopProgramma:
+        break
     fahrenheit = tempFahr(tempCel)
-#tempCel = float(tempCel)
-#windSnel = float(windSnel)
-#vocht = float(vocht)
     gevoel = gevoelsTemp(tempCel, vocht, windSnel)
 
     print(f"Het is momenteel {tempCel} graden celcius.")
