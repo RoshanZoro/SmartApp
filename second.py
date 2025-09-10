@@ -1,5 +1,6 @@
 # 8.2 Het creëren van functies
 stopLijst = ["stop", "exit", "quit", "sotp"]
+tempLijst = []
 dagen = 0
 stopProgramma = False
 
@@ -68,10 +69,15 @@ while not stopProgramma:  # 7.5 De loop-en-een-half 89
         break
     fahrenheit = tempFahr(tempCel)
     gevoel = gevoelsTemp(tempCel, vocht, windSnel)
+    #12.4 List methodes
+
+    tempLijst.append(gevoel)
+    gemiddeldeTemp = round ( (sum(tempLijst) / len(tempLijst) ), 2 )
     print("-" * 40)
     print(f"Het is momenteel {tempCel} graden celcius.")
     print(f"Dat is {fahrenheit} graden fahrenheit.")
     print(f"De gevoelstemperatuur is momenteel {gevoel} graden.")
     print(airco(gevoel))
+    print(f"De gemiddelde temperatuur is {gemiddeldeTemp} graden.")
     print("-" * 40)
     dagen += 1
