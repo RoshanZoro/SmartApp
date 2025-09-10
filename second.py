@@ -34,6 +34,7 @@ def vraag(prompt, vochtPercentage=False):
     while True:
         waarde = input(prompt)
             #var voor de input en de input tekst (prompt)
+            #https://www.w3schools.com/python/ref_func_input.asp
         if waarde == "":
             print("Je moet nog een getal invoeren!")
             continue
@@ -48,6 +49,7 @@ def vraag(prompt, vochtPercentage=False):
             print("Dit is geen geldig getal.")
             continue
             #Als de input geen getal is (float in ons geval) dan gooit hij Value Error met een print
+            #https://www.digitalocean.com/community/tutorials/python-valueerror-exception-handling-examples
         if vochtPercentage and waarde > 100:
             print("Het percentage mag niet hoger dan 100 zijn.")
             continue
@@ -55,7 +57,8 @@ def vraag(prompt, vochtPercentage=False):
         return waarde
 
 
-# f-string, 44 Eenvoudige Functies
+# f-string, 44 Eenvoudige Functies, in het boek is f-string niet te vinden maar op google wel zoals
+#https://www.w3schools.com/python/python_string_formatting.asp
 
 while not stopProgramma:  # 7.5 De loop-en-een-half 89
     tempCel = vraag(f"Wat is de temperatuur op dag {dagen + 1}? [C] ")
