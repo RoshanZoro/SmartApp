@@ -19,13 +19,12 @@ def vraag(prompt):
         if waarde == "":
             print("Je moet nog een getal invoeren!")
             continue
-        elif waarde.lower() in "stopLijst":
-            stopProgramma = True
+        elif waarde.lower() in stopLijst:
             return None
         else:
             try:
                 return float(waarde)
-            except:
+            except ValueError:
                 print("Dit is geen geldig getal.")
 
 
