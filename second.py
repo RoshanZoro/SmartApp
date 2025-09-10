@@ -27,6 +27,8 @@ def airco(gevoelsTemp):
     elif 10 < int(gevoelsTemp) < 22:
         return "Heerlijk weer, niet te koud of te warm."
     return "Het is behoorlijk koud! Verwarming aan op de benedenverdieping!"
+#https://www.geeksforgeeks.org/python/chaining-comparison-operators-python/ en
+#tip van pycharm zelf om chaining te gebruiken ipv 2x int(gevoelsTemp)
 
 
 #Def zodat ik niet bij elke vraag het zelfde hoef te zetten
