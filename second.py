@@ -81,3 +81,5 @@ while not stopProgramma:  # 7.5 De loop-en-een-half 89
     print(f"De gemiddelde temperatuur is {gemiddeldeTemp} graden.")
     print("-" * 40)
     dagen += 1
+    if dagen >= 7:
+        break
