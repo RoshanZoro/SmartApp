@@ -58,7 +58,7 @@ while not stopProgramma:  # 7.5 De loop-en-een-half 89
         break
     fahrenheit = tempFahr(tempCel)
     gevoel = gevoelsTemp(tempCel, vocht, windSnel)
-
+    print("-" * 40)
     print(f"Het is momenteel {tempCel} graden celcius.")
     print(f"Dat is {fahrenheit} graden fahrenheit.")
     print(f"De gevoelstemperatuur is momenteel {gevoel} graden.")
