@@ -54,11 +54,11 @@ while not stopProgramma: #7.5 De loop-en-een-half 89
             break
     if stopProgramma:
             break
-temp = float(tempCel)
+#temp = float(tempCel)
 fahrenheit = tempFahr(tempCel)
-tempCel = float(tempCel)
-windSnel = float(windSnel)
-vocht = float(vocht)
+#tempCel = float(tempCel)
+#windSnel = float(windSnel)
+#vocht = float(vocht)
 gevoel = gevoelsTemp(tempCel, vocht, windSnel)
 
 print(f"Het is momenteel {tempCel} graden celcius.")
