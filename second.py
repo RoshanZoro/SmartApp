@@ -26,8 +26,6 @@ while not stopProgramma: #7.5 De loop-en-een-half 89
         else:
             tempCel = float(tempCel)
             break
-    if stopProgramma:
-            break
     while True:
         windSnel = input("Wat is de windsnelheid? [m/s]")
         if windSnel == "":
@@ -39,8 +37,6 @@ while not stopProgramma: #7.5 De loop-en-een-half 89
         else:
             windSnel = float(windSnel)
             break
-    if stopProgramma:
-            break
     while True:
         vocht = input("Wat is de vochtigheid percentage? [%] ")
         if vocht == "":
@@ -50,23 +46,21 @@ while not stopProgramma: #7.5 De loop-en-een-half 89
             stopProgramma = True
             break
         else:
-            vocht = int(vocht)
-            break
-    if stopProgramma:
+            vocht = float(vocht)
             break
 #temp = float(tempCel)
-fahrenheit = tempFahr(tempCel)
+    fahrenheit = tempFahr(tempCel)
 #tempCel = float(tempCel)
 #windSnel = float(windSnel)
 #vocht = float(vocht)
-gevoel = gevoelsTemp(tempCel, vocht, windSnel)
+    gevoel = gevoelsTemp(tempCel, vocht, windSnel)
 
-print(f"Het is momenteel {tempCel} graden celcius.")
-print(f"Het is momenteel {fahrenheit} graden fahrenheit.")
-print(f"De gevoelstemperatuur is momenteel {gevoelsTemp(tempCel, vocht, windSnel)} graden.")
-print(airco(gevoel))
-print("-" * 40)
+    print(f"Het is momenteel {tempCel} graden celcius.")
+    print(f"Het is momenteel {fahrenheit} graden fahrenheit.")
+    print(f"De gevoelstemperatuur is momenteel {gevoelsTemp(tempCel, vocht, windSnel)} graden.")
+    print(airco(gevoel))
+    print("-" * 40)
     #if input():
      #  break
-dagen += 1
+    dagen += 1
 
