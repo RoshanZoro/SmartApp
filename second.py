@@ -1,5 +1,8 @@
 
 #8.2 Het creëren van functies
+stopLijst = ["stop", "exit", "quit", "sotp"]
+dagen = 0
+stopProgramma = False
 
 def gevoelsTemp (tempCel, vocht, windSnel):
     return round ( (tempCel - (vocht / 100) * windSnel), 2 )
@@ -10,18 +13,22 @@ def airco(gevoelsTemp):
         return "Het is warm. De airco kan aan."
     else:
         return "Het is niet warm."
-# def leeg(prompt):
-#     while True:
-#         if waarde == "":
-#             print("Je moet nog een getal invoeren!")
-#             continue
-#         elif prompt.lower() == "stop":
-#             stopProgramma = True
-#             break
-#     return
-stopLijst = ["stop", "exit", "quit", "sotp"]
-dagen = 0
-stopProgramma = False
+def vraag(prompt):
+    while True:
+        waarde = input(prompt)
+        if waarde == "":
+            print("Je moet nog een getal invoeren!")
+            continue
+        elif waarde.lower() in "stopLijst":
+            stopProgramma = True
+            return None
+        else:
+            try:
+                return float(waarde)
+            except:
+                print("Dit is geen geldig getal.")
+
+
 #f-string, 44 Eenvoudige Functies
 
 while not stopProgramma: #7.5 De loop-en-een-half 89
