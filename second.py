@@ -19,69 +19,41 @@ def vraag(prompt):
         if waarde == "":
             print("Je moet nog een getal invoeren!")
             continue
-        elif waarde.lower() in stopLijst:
+        if waarde.lower() in stopLijst:
             return None
-        else:
-            try:
-                return float(waarde)
-            except ValueError:
-                print("Dit is geen geldig getal.")
+        try:
+            return float(waarde)
+        except ValueError:
+            print("Dit is geen geldig getal.")
 
 
 #f-string, 44 Eenvoudige Functies
 
 while not stopProgramma: #7.5 De loop-en-een-half 89
-    while True:
-        tempCel = input(f"Wat is de temperatuur op dag {dagen + 1}? [C] ")
-        if tempCel == "":
-            print("Je moet nog een getal invoeren!")
-            continue
-        elif tempCel.lower() in stopLijst:
+        tempCel = vraag(f"Wat is de temperatuur op dag {dagen + 1}? [C] ")
+        if tempCel is None:
             stopProgramma = True
             break
-        else:
-            tempCel = float(tempCel)
-            break
-    if stopProgramma:
-        break
-    while True:
-        windSnel = input("Wat is de windsnelheid? [m/s]")
-        if windSnel == "":
-            print("Je moet nog een getal invoeren!")
-            continue
-        elif windSnel.lower() in stopLijst:
+        windSnel = vraag("Wat is de windsnelheid? [m/s]")
+        if windSnel is None:
             stopProgramma = True
             break
-        else:
-            windSnel = float(windSnel)
-            break
-    if stopProgramma:
-        break
-    while True:
         vocht = input("Wat is de vochtigheid percentage? [%] ")
-        if vocht == "":
-            print("Je moet nog een getal invoeren!")
-            continue
-        elif vocht.lower() in stopLijst:
+        if vocht  is None:
             stopProgramma = True
             break
         elif float(vocht) > 100:
             print("Het percentage mag niet hoger dan 100 zijn.")
             continue
-        else:
-            vocht = float(vocht)
-            break
-    if stopProgramma:
-        break
-    fahrenheit = tempFahr(tempCel)
-    gevoel = gevoelsTemp(tempCel, vocht, windSnel)
+fahrenheit = tempFahr(tempCel)
+gevoel = gevoelsTemp(tempCel, vocht, windSnel)
 
-    print(f"Het is momenteel {tempCel} graden celcius.")
-    print(f"Het is momenteel {fahrenheit} graden fahrenheit.")
-    print(f"De gevoelstemperatuur is momenteel {gevoelsTemp(tempCel, vocht, windSnel)} graden.")
-    print(airco(gevoel))
-    print("-" * 40)
+print(f"Het is momenteel {tempCel} graden celcius.")
+print(f"Het is momenteel {fahrenheit} graden fahrenheit.")
+print(f"De gevoelstemperatuur is momenteel {gevoelsTemp(tempCel, vocht, windSnel)} graden.")
+print(airco(gevoel))
+print("-" * 40)
     #if input():
      #  break
-    dagen += 1
+dagen += 1
 
