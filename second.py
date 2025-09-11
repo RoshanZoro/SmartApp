@@ -42,6 +42,8 @@ def vraag(prompt, vochtPercentage=False):
             continue
             #Als er niks getypt word, tekst printen en herhalen
         if waarde.lower() in stopLijst:
+            print("-" * 40)
+            print("Bye")
             return None
             #Als de input tekst in mijn lijst staat het programma stoppen met break
         try:
