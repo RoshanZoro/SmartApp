@@ -29,6 +29,7 @@ def airco(gevoelsTemp):
     return "Het is behoorlijk koud! Verwarming aan op de benedenverdieping!"
 #https://www.geeksforgeeks.org/python/chaining-comparison-operators-python/ en
 #tip van pycharm zelf om chaining te gebruiken ipv 2x int(gevoelsTemp)
+#https://www.w3schools.com/python/python_conditions.asp
 
 
 #Def zodat ik niet bij elke vraag het zelfde hoef te zetten
