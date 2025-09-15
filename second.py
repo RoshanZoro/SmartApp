@@ -1,9 +1,10 @@
 # 8.2 Het creëren van functies                                                                                                                                                                                             Roshan
+#https://www.w3schools.com/python/python_functions.asp
 stopLijst = ["stop", "exit", "quit", "sotp", "stoop", "q"]
 tempLijst = [] #Deze moest buiten de loop anders werkte hij niet
 dagen = 0
 stopProgramma = False
-
+˚
 
 def gevoelsTemp(tempCel, vocht, windSnel):
     return round((tempCel - (vocht / 100) * windSnel), 2)
