@@ -1,4 +1,4 @@
-# 8.2 Het creëren van functies
+# 8.2 Het creëren van functies                                                                                                                                                                                             Roshan
 stopLijst = ["stop", "exit", "quit", "sotp", "stoop", "q"]
 tempLijst = [] #Deze moest buiten de loop anders werkte hij niet
 dagen = 0
