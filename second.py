@@ -54,6 +54,7 @@ def vraag(prompt, vochtPercentage=False):
             continue
             #Als de input geen getal is (float in ons geval) dan gooit hij Value Error met een print
             #https://www.digitalocean.com/community/tutorials/python-valueerror-exception-handling-examples
+            #https://www.w3schools.com/python/ref_exception_valueerror.asp
         if vochtPercentage and waarde > 100:
             print("Het percentage mag niet hoger dan 100 zijn.")
             continue
