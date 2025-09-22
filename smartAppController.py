@@ -25,10 +25,12 @@ with open("gegevens.txt") as bestand:
 cvInput = int(input("Van welke dag wil je informatie zien?"))
 
 def CV():
-    input = cvInput -1
-    if (setPoint[input] - buitenTemperatuur[input]) >= 20:
+    inputUser = cvInput -1
+    reken = setPoint[inputUser] - buitenTemperatuur[inputUser]
+    if reken >= 20:
         return 100
-
+    elif reken >= 10 and reken < 20:
+        return 50
 print(f"Er staan {aantalRegels} regels in het bestand.")
 print(datum[0], aantalPersonen[0])
 print(datum[1], aantalPersonen[1])
