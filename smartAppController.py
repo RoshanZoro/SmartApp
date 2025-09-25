@@ -15,18 +15,57 @@ with open("gegevens.txt", "r") as f:
         data.append(row)
 pprint.pp(data[0])
 
-cvInput = int(input("Van welke dag wil je informatie zien? "))
+# cvInput = int(input("Van welke dag wil je informatie zien? "))
 
-def CV():
-    inputUser = data[cvInput -1]
-    setpoint = float(inputUser["setPoint"])
-    buitentemp = float(inputUser["buitenTemperatuur"])
-    reken = setpoint - buitentemp
-    if reken >= 20:
-        return 100
-    elif reken >= 10 and reken < 20:
-        return 50
+def cv():
+    resultaat = []
+    for row in data:
+        setpoint = float(row["setPoint"])
+        buitentemp = float(row["buitenTemperatuur"])
+        reken = setpoint - buitentemp
+        if reken >= 20:
+            resultaat.append(100)
+        elif reken >= 10 and reken < 20:
+            resultaat.append(50)
+        elif reken < 10:
+            resultaat.append(0)
+    return resultaat
+
+
+def ventilatie():
+    resultaat = []
+    for row in data:
+        aantalp = float(row["aantalPersonen"])
+        stand = aantalp + 1
+        if stand > 4:
+            resultaat.append(4)
+        else:
+            resultaat.append(stand)
+    return resultaat
+def bewatering():
+    resultaat = []
+    for row in data:
+        neerslag = float(row["neerslagMM"])
+        if neerslag < 3:
+            resultaat.append(True)
+        elif neerslag >= 3:
+            resultaat.append(False)
+    return resultaat
+ventilatieResultaten = ventilatie()
+cvResultaten = cv()
+bewateringResultaten = bewatering()
+with open("uitvoerbestand.txt", "a") as f:
+    f.write("datum, cvWaarde, ventilatieWaarde, bewateringWaarde \n")
+    for i, row in enumerate(data):
+        datum = str(row["datum"])
+        cvWaarde = cvResultaten[i]
+        ventilatieWaarde = ventilatieResultaten[i]
+        bewateringWaarde = bewateringResultaten[i]
+        f.write(f"{datum} {cvWaarde} {ventilatieWaarde} {bewateringWaarde}\n")
+
 print(f"Er staan {aantalRegels} regels in het bestand.")
 
 
-print(CV())
+print(cv())
+print(bewatering())
+print(ventilatie())
