@@ -54,7 +54,7 @@ def bewatering():
 ventilatieResultaten = ventilatie()
 cvResultaten = cv()
 bewateringResultaten = bewatering()
-with open("uitvoerbestand.txt", "a") as f:
+with open("uitvoerbestand.txt", "w") as f:
     f.write("datum, cvWaarde, ventilatieWaarde, bewateringWaarde \n")
     for i, row in enumerate(data):
         datum = str(row["datum"])
@@ -64,8 +64,11 @@ with open("uitvoerbestand.txt", "a") as f:
         f.write(f"{datum} {cvWaarde} {ventilatieWaarde} {bewateringWaarde}\n")
 
 print(f"Er staan {aantalRegels} regels in het bestand.")
-
-
-print(cv())
-print(bewatering())
-print(ventilatie())
+with open("uitvoerbestand.txt", "r") as f:
+    uitvoerkolommen = f.readline().strip().split(", ")
+    uitvoerdata = []
+    for lijn in f:
+        uitvoerwaarden = lijn.strip().split(", ")
+        uitvoerrow = dict(zip(uitvoerkolommen, uitvoerwaarden))
+        uitvoerdata.append(uitvoerrow)
+pprint.pp(uitvoerdata[0])
