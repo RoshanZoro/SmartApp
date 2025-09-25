@@ -7,22 +7,6 @@ with open("gegevens.txt", "r") as data:
 aantalRegels = len(regels) - 1
 
 with open("gegevens.txt", "r") as f:
-    # data = bestand.readlines()
-    # datum = []
-    # aantalPersonen = []
-    # setPoint = []
-    # buitenTemperatuur = []
-    # neerslagMM = []
-    # currentLine = 0
-    # #data in lijsten zetten zodat je het makkelijk kan printen
-    # for lines in data[1:]:
-    #     currentLine += 1
-    #     detail = [x.strip() for x in lines.split(",")]
-    #     datum.append(detail[0])
-    #     aantalPersonen.append(int(detail[1]))
-    #     setPoint.append(float(detail[2]))
-    #     buitenTemperatuur.append(float(detail[3]))
-    #     neerslagMM.append(float(detail[4]))
     kolommen = f.readline().strip().split(", ")
     data = []
     for lijn in f:
