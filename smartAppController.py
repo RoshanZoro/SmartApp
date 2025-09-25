@@ -13,7 +13,7 @@ with open("gegevens.txt", "r") as f:
         waarden = lijn.strip().split(", ")
         row = dict(zip(kolommen, waarden))
         data.append(row)
-pprint.pp(data[0])
+# pprint.pp(data[0])
 
 # cvInput = int(input("Van welke dag wil je informatie zien? "))
 
@@ -71,4 +71,7 @@ with open("uitvoerbestand.txt", "r") as f:
         uitvoerwaarden = lijn.strip().split(", ")
         uitvoerrow = dict(zip(uitvoerkolommen, uitvoerwaarden))
         uitvoerdata.append(uitvoerrow)
-pprint.pp(uitvoerdata[0])
+# pprint.pp(uitvoerdata[0])
+datumInput = int(input("Kies een datum [bv 1]: "))
+datumuitvoer = uitvoerdata[datumInput]
+pprint.pp(datumuitvoer)
