@@ -73,5 +73,21 @@ with open("uitvoerbestand.txt", "r") as f:
         uitvoerdata.append(uitvoerrow)
 # pprint.pp(uitvoerdata[0])
 datumInput = int(input("Kies een datum [bv 1]: "))
-datumuitvoer = uitvoerdata[datumInput]
+dataLengte = len(uitvoerdata)
+if datumInput > dataLengte:
+    print("Ongeldige datum")
+    break
+else:
+    datumuitvoer = uitvoerdata[datumInput]
+print(len(uitvoerdata))
 pprint.pp(datumuitvoer)
+
+keuze = input("Maak een keuze: CV-ketel, Ventilatie, Bewatering: ")
+if keuze not in ["CV-ketel", "CV", "cv", "Ventilatie", "ventilatie", "Bewatering", "bewatering"]:
+    print("Ongeldig systeem gekozen.")
+elif keuze in ["cv", "CV", "CV-ketel", "cv-ketel"]:
+    print(1)
+elif keuze in ["ventilatie", "Ventilatie"]:
+    print(1)
+elif keuze in ["bewatering", "Bewatering"]:
+    print(1)
