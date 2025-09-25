@@ -1,5 +1,6 @@
 from datetime import datetime
 import pprint
+import sys
 nu = datetime.now()
 bestand = open("gegevens.txt", "a")
 with open("gegevens.txt", "r") as data:
@@ -51,9 +52,11 @@ def bewatering():
         elif neerslag >= 3:
             resultaat.append(False)
     return resultaat
+
 ventilatieResultaten = ventilatie()
 cvResultaten = cv()
 bewateringResultaten = bewatering()
+
 with open("uitvoerbestand.txt", "w") as f:
     f.write("datum, cvWaarde, ventilatieWaarde, bewateringWaarde \n")
     for i, row in enumerate(data):
@@ -62,6 +65,7 @@ with open("uitvoerbestand.txt", "w") as f:
         ventilatieWaarde = ventilatieResultaten[i]
         bewateringWaarde = bewateringResultaten[i]
         f.write(f"{datum} {cvWaarde} {ventilatieWaarde} {bewateringWaarde}\n")
+        f.close()
 
 print(f"Er staan {aantalRegels} regels in het bestand.")
 with open("uitvoerbestand.txt", "r") as f:
@@ -76,7 +80,7 @@ datumInput = int(input("Kies een datum [bv 1]: "))
 dataLengte = len(uitvoerdata)
 if datumInput > dataLengte:
     print("Ongeldige datum")
-    break
+    sys.exit()
 else:
     datumuitvoer = uitvoerdata[datumInput]
 print(len(uitvoerdata))
